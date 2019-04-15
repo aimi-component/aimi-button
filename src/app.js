@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 
 // import AimiButton from 'aimi-button';
 import AimiButton from './AimiButton.js'
-import './AimiButton.scss';
+// import './AimiButton.scss';
+import './app.scss';
+
 
 class App extends React.Component{
     constructor(props){
@@ -15,8 +17,8 @@ class App extends React.Component{
     render(){
         return(
             <div>
-                <div>
-                    <p>Aimi Button Component</p>
+                <div className="demo-container">
+                    <p className="demo-title">Aimi Button Component</p>
                     <div>
                         <AimiButton>Button Normal</AimiButton>
                     </div>
