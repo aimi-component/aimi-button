@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 // const cleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -18,7 +19,13 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader','sass-loader']
+        use: ExtractTextWebpackPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {loader:'css-loader'},
+            {loader:'sass-loader'}
+          ]
+        }),
       }
     ]
   },
@@ -26,7 +33,10 @@ module.exports = {
     contentBase: './dist'
   },
   plugins: [
-    // new cleanWebpackPlugin(),
+    new ExtractTextWebpackPlugin({
+      filename: 'style.min.css',
+      allChunks: true 
+    }),
     new htmlWebpackPlugin({
       template: 'public/index.html'
     })
