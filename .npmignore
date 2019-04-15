@@ -11,3 +11,7 @@ webpack.config.json
 /src
 /webpack
 
+.DS_Store
+.git
+.svn
+.npmrc
