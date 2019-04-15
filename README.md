@@ -3,6 +3,11 @@
 ```
 npm i aimi-button
 ```
+or
+```
+yarn add aimi-button
+```
+
 
 ## Usage
 
