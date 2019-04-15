@@ -11,6 +11,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import AimiButton from 'aimi-button';
+import 'aimi-button/dist/aimibutton.css';
 
 class App extends React.Component{
     constructor(props){
