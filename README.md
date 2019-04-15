@@ -1,3 +1,6 @@
+## Aimi-Button
+A Easy React Button Component
+
 ## Install
 
 ```

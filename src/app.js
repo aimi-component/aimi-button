@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AimiButton from 'aimi-button';
+// import AimiButton from 'aimi-button';
+import AimiButton from './AimiButton.js'
+import './AimiButton.scss';
 
 class App extends React.Component{
     constructor(props){
@@ -13,9 +15,21 @@ class App extends React.Component{
     render(){
         return(
             <div>
-                <p>Aimi Button Component</p>
-                <AimiButton>Button Normal</AimiButton>
-                <AimiButton disable>Button Normal</AimiButton>
+                <div>
+                    <p>Aimi Button Component</p>
+                    <div>
+                        <AimiButton>Button Normal</AimiButton>
+                    </div>
+                    <div>
+                        <AimiButton disable>Button Normal</AimiButton>
+                    </div>
+                    <div>
+                        <AimiButton primary={true} >Button Normal</AimiButton>
+                    </div>
+                    <div>
+                        <AimiButton primary={true} size={'lg'}>Button Normal</AimiButton>
+                    </div>
+                </div>
             </div>
         )
     }

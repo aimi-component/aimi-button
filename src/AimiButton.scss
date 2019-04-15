@@ -28,4 +28,17 @@
             background: #e8e8e8;
         }
     }
+    &.aimi-button--primary{
+        border: 1px solid #0274d4;
+        color: #ffffff;
+        background: #0084f2;
+        &:hover{
+            background: #0274d4;
+        }
+        &.aimi-button--disable{
+            background: #7fc1f8;
+            border: 1px solid #7fc1f8;
+            cursor: none;
+        }   
+    }
 }

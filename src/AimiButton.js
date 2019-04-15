@@ -8,23 +8,28 @@ class AimiButton extends Component {
     super(props);
     this.state = {
       value:'',
+      buttonPrimary:this.props.primary,
       buttonDisable:this.props.disable,
-      buttonAnimation:false
+      buttonAnimation:false,
+      size:this.props.size
     };
   }
 
   render() {
+    let classContent = `aimi-button ${this.state.size?`aimi-button-${this.state.size}`:''} ${this.state.buttonPrimary?' aimi-button--primary':''} ${this.state.buttonDisable?' aimi-button--disable':''}`
     return (
-		<button className={`aimi-button${this.state.buttonDisable?' aimi-button--disable':''}`}>{this.props.children}</button>
+		  <button className={classContent}>{this.props.children}</button>
     );
   }
 }
 
 AimiButton.propTypes = {
-	buttonDisable : PropTypes.bool,
-    buttonAnimation:PropTypes.bool,
-    value:PropTypes.bool,
-    children:PropTypes.string
+	disable : PropTypes.bool,
+  animation:PropTypes.bool,
+  primary:PropTypes.bool,  
+  value:PropTypes.bool,
+  size:PropTypes.string,
+  children:PropTypes.string
 }
 
 export default AimiButton;
