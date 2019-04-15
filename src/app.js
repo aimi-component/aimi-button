@@ -6,6 +6,32 @@ import AimiButton from './AimiButton.js'
 // import './AimiButton.scss';
 import './app.scss';
 
+class LoadingBtn extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            buttonText:'Click Countdown'
+        }
+    }
+
+    handleClick = () =>{
+        console.log('click button')
+        // this.handleClick()
+    }
+
+    handleCount = () =>{
+        console.log('count button')
+    }
+
+    render(){
+        return(
+            <div>
+                <AimiButton onClick={this.handleClick}>{this.state.buttonText}</AimiButton>
+            </div>
+        )
+        
+    }
+}
 
 class App extends React.Component{
     constructor(props){
@@ -19,17 +45,23 @@ class App extends React.Component{
             <div>
                 <div className="demo-container">
                     <p className="demo-title">Aimi Button Component</p>
-                    <div>
+                    <div className="demo-btn-panel">
                         <AimiButton>Button Normal</AimiButton>
                     </div>
-                    <div>
-                        <AimiButton disable>Button Normal</AimiButton>
+                    <div className="demo-btn-panel">
+                        <AimiButton disable>Button Disable</AimiButton>
                     </div>
-                    <div>
-                        <AimiButton primary={true} >Button Normal</AimiButton>
+                    <div className="demo-btn-panel">
+                        <AimiButton primary={true} >Button Primary</AimiButton>
                     </div>
-                    <div>
-                        <AimiButton primary={true} size={'lg'}>Button Normal</AimiButton>
+                    <div className="demo-btn-panel">
+                        <AimiButton primary={true} size={'lg'}>Button Large</AimiButton>
+                    </div>
+                    <div className="demo-btn-panel">
+                        <AimiButton primary={true} size={'sm'}>Button Small</AimiButton>
+                    </div>
+                    <div className="demo-btn-panel">
+                        <LoadingBtn />
                     </div>
                 </div>
             </div>

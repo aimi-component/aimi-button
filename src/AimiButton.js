@@ -18,7 +18,7 @@ class AimiButton extends Component {
   render() {
     let classContent = `aimi-button ${this.state.size?`aimi-button-${this.state.size}`:''} ${this.state.buttonPrimary?' aimi-button--primary':''} ${this.state.buttonDisable?' aimi-button--disable':''}`
     return (
-		  <button className={classContent}>{this.props.children}</button>
+		  <button onClick={this.props.onClick} className={classContent}>{this.props.children}</button>
     );
   }
 }
@@ -29,7 +29,8 @@ AimiButton.propTypes = {
   primary:PropTypes.bool,  
   value:PropTypes.bool,
   size:PropTypes.string,
-  children:PropTypes.string
+  children:PropTypes.string,
+  onClick:PropTypes.func
 }
 
 export default AimiButton;
