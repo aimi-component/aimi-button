@@ -14,8 +14,8 @@ class LoadingBtn extends React.Component{
         }
     }
 
-    handleClick = () =>{
-        console.log('click button')
+    handleClick = (e) =>{
+        console.log(e)
         // this.handleClick()
     }
 
@@ -53,6 +53,9 @@ class App extends React.Component{
                     </div>
                     <div className="demo-btn-panel">
                         <AimiButton primary={true} >Button Primary</AimiButton>
+                    </div>
+                    <div className="demo-btn-panel">
+                        <AimiButton primary={true} disable>Button Primary</AimiButton>
                     </div>
                     <div className="demo-btn-panel">
                         <AimiButton primary={true} size={'lg'}>Button Large</AimiButton>
